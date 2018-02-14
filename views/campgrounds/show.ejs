@@ -1,0 +1,36 @@
+<% include ../partials/top %>
+
+<div class="row">
+	<div class="col-md-3">
+		<p class="lead">Yelp Camp</p>
+		<div class="list-group">
+			<li class="list-group-item">Info 1</li>
+			<li class="list-group-item">Info 2</li>
+			<li class="list-group-item">Info 3</li>		
+		</div>
+	</div>
+	<div class="col-md-9">
+		<div class="card">
+			<img class="card-img-top img-thumbnail" src="<%= data.image %>" alt="Campground image">	
+		</div>
+		<div class="card-body">
+			<h2 class="card-title"><%= data.name %></h2>
+			<p class="card-text"><%= data.description %></p>
+			<p class="card-text"><em>Submitted by: <%= data.author.username %></em></p>
+		</div>
+		<ul class="list-group list-group flush">
+			<% data.comments.forEach(function(comment) { %>
+				<li class="list-group-item">
+					<strong><%= comment.author.username %></strong>
+					<span class="float-sm-right">10 days ago</span>
+					<p><%= comment.text %></p>
+				</li>
+			<% }); %>
+		</ul>
+		<div class="card-body">
+			<a class="card-link" href="/campgrounds/<%= data._id %>/comments/new">Add a new comment!</a>
+		</div>
+	</div>
+</div>
+
+<% include ../partials/bottom %>
