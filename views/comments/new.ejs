@@ -1,0 +1,20 @@
+<% include ../partials/top %>
+
+<div class="row">
+	<div class="col-sm-12">
+		<h2 class="text-center">Add a new comment to <%= data.title %></h2>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6 offset-sm-3">
+		<form action="/campgrounds/<%= data._id %>/comments" method="POST">
+			<div class="form-group">
+				<label for="textForm">Comment:</label>
+				<textarea id="textForm" class="form-control" placeholder="Comment" name="comment[text]"></textarea>
+			</div>
+			<button class="btn btn-primary" type="submit">Add comment!</button>
+		</form>
+	</div>
+</div>
+
+<% include ../partials/bottom %>
