@@ -21,3 +21,6 @@ INDEX			/dogs				GET			Display a list of all dogs
 NEW				/dogs/new		GET			Display a form to make a new dog
 CREATE 		/dogs				POST		Add a new dog to DB
 SHOW			/dogs/:id		GET			Show info about one dog
+
+NEW				/dogs/:id/comments/new		GET
+CREATE		/dogs/:id/comments				POST
