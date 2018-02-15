@@ -1,0 +1,20 @@
+<% include ../partials/top %>
+
+<div class="row">
+	<div class="col-sm-12">
+		<h2 class="text-center">Edit comment</h2>
+	</div>
+</div>
+<div class="row">
+	<div class="col-sm-6 offset-sm-3">
+		<form action="/campgrounds/<%= campground_id %>/comments/<%= comment._id %>?_method=PUT" method="POST">
+			<div class="form-group">
+				<label for="textForm">Comment:</label>
+				<textarea id="textForm" class="form-control" placeholder="Comment" name="comment[text]"><%= comment.text %></textarea>
+			</div>
+			<button class="btn btn-primary" type="submit">Save edit!</button>
+		</form>
+	</div>
+</div>
+
+<% include ../partials/bottom %>
