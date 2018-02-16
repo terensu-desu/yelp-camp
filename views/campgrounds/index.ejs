@@ -7,9 +7,11 @@
 		<div class="card">
 			<img class="card-img-top img-fluid" alt="Campground preview" src="<%= campground.image %>" />
 			<div class="card-body">
-				<h2><%= campground.name %></h2>
-				<p>A great campground with beautiful scenery and nature...</p>
-				<a href="/campgrounds/<%= campground._id %>">Show more</a>
+				<h3><%= campground.name %></h3>
+				<p class="card-text"><%= campground.description.substring(0, 100) %></p>
+			</div>
+			<div class="card-footer">
+				<a href="/campgrounds/<%= campground._id %>">View campground</a>
 			</div>
 		</div>
 	</div>
