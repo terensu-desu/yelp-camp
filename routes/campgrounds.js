@@ -19,16 +19,11 @@ router.get('/', function(req, res) {
 
 // CREATE
 router.post('/', isLoggedIn, function(req, res) {
-	var newCampground = {
-		name: req.body.name,
-		image: req.body.image,
-		description: req.body.description,
-		author: {
-			id: req.user._id,
-			username: req.user.username
-		}
+	req.body.campground.author = {
+		id: req.user._id,
+		username: req.user.username
 	};
-	Campground.create(newCampground, function(err, newCampground) {
+	Campground.create(req.body.campground, function(err, newCampground) {
 		if(err) {
 			req.flash('danger', 'There was an error during the request.');
 			res.redirect('back');
