@@ -14,7 +14,8 @@ var indexRoutes = require('./routes/index');
 var seedDB = require('./seeder/seeds.js');
 
 var app = express();
-mongoose.connect("mongodb://localhost/yelp_camp");
+//mongoose.connect("mongodb://localhost/yelp_camp");
+mongoose.connect("mongodb://terence:vesper@ds239128.mlab.com:39128/campeggi");
 app.use(bodyParser.urlencoded({extended:true}));
 app.use(express.static(__dirname + "/public"));
 app.set("view engine", "ejs");
