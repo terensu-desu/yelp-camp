@@ -8,7 +8,7 @@ var { isLoggedIn } = middleware;
 
 // ROOT - Or landing.. whatever, he wants to keep this one around.
 router.get('/', function(req, res) {
-	res.render('root');
+	res.redirect('/campgrounds/');
 });
 
 // AUTH ROUTES
